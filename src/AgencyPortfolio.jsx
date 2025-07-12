@@ -74,7 +74,7 @@ export default function AgencyPortfolio() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <img src="/logo1.png" alt="Norovix Logo" width={120} height={40}  />
+                <img src="/logo1.png" alt="Norovix Logo" width={120} height={40} />
               </div>
             </div>
 
@@ -128,7 +128,7 @@ export default function AgencyPortfolio() {
         )}
       </nav>
 
-      {/* Hero Section */}
+// Hero Section
       <section
         id="home"
         className="pt-16 min-h-screen flex items-center bg-gradient-to-br from-purple-50 via-white to-pink-50"
@@ -154,19 +154,19 @@ export default function AgencyPortfolio() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
+                  className="p-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
                   onClick={() => scrollToSection("projects")}
                 >
                   View Our Work
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button variant="outline" size="lg" onClick={() => scrollToSection("contact")}>
+                <Button className="px-6" variant="outline" size="lg" onClick={() => scrollToSection("contact")}>
                   Get In Touch
                 </Button>
               </div>
               <div className="flex items-center space-x-8 pt-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">150+</div>
+                  <div className="text-3xl font-bold text-gray-900">70+</div>
                   <div className="text-sm text-gray-600">Projects Completed</div>
                 </div>
                 <div className="text-center">
@@ -174,7 +174,7 @@ export default function AgencyPortfolio() {
                   <div className="text-sm text-gray-600">Client Satisfaction</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">5+</div>
+                  <div className="text-3xl font-bold text-gray-900">3+</div>
                   <div className="text-sm text-gray-600">Years Experience</div>
                 </div>
               </div>
@@ -196,17 +196,16 @@ export default function AgencyPortfolio() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* // About Section */}
       <section id="about" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="text-purple-600 border-purple-200 mb-4">
-              About Now
+            <Badge variant="outline" className="p-4 text-purple-600 border-purple-200 mb-4">
+              About Us
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Passionate About Digital Excellence</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're a team of creative professionals dedicated to bringing your vision to life through innovative design
-              and cutting-edge technology.
+              At Novorix Solutions, we’re a team of creative professionals passionate about bringing your vision to life through innovative design, intelligent automation, and cutting-edge technology.
             </p>
           </div>
 
@@ -214,13 +213,10 @@ export default function AgencyPortfolio() {
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-gray-900">Our Story</h3>
               <p className="text-gray-600 leading-relaxed">
-                Founded in 2019, CreativeStudio has grown from a small team of passionate designers to a full-service
-                digital agency. We believe in the power of great design to transform businesses and create meaningful
-                connections with audiences.
+                Founded in 2022, Novorix Solutions began as a vision to merge creativity with technology — a small team of innovators determined to build smarter digital experiences. Over the years, we’ve grown into a full-service agency, delivering powerful solutions in AI automation, web development, mobile apps, digital marketing, and UI/UX design.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Our approach combines strategic thinking with creative execution, ensuring every project not only looks
-                amazing but also delivers measurable results for our clients.
+                Our approach blends strategic insight with bold creativity, ensuring every project not only looks great but drives real, measurable results. At Novorix, we don’t just build digital products — we build digital impact.
               </p>
 
               <div className="grid grid-cols-2 gap-6 pt-6">
@@ -231,7 +227,7 @@ export default function AgencyPortfolio() {
                 </div>
                 <div className="text-center p-6 bg-pink-50 rounded-lg">
                   <Target className="h-8 w-8 text-pink-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-gray-900">200+</div>
+                  <div className="text-2xl font-bold text-gray-900">100+</div>
                   <div className="text-sm text-gray-600">Projects Delivered</div>
                 </div>
               </div>
@@ -254,7 +250,7 @@ export default function AgencyPortfolio() {
       <section id="services" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="text-purple-600 border-purple-200 mb-4">
+            <Badge variant="outline" className="p-4 text-purple-600 border-purple-200 mb-4">
               Our Services
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">What We Do Best</h2>
@@ -268,10 +264,10 @@ export default function AgencyPortfolio() {
             {[
               {
                 icon: Palette,
-                title: "Brand Design",
+                title: "AI Automation",
                 description:
-                  "Create memorable brand identities that resonate with your target audience and stand out in the market.",
-                features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Brand Strategy"],
+                  "Streamline your operations with intelligent automation solutions that boost efficiency, reduce errors, and drive growth.",
+                features: ["Workflow Automation", "AI Chatbots & Virtual Assistants", "Predictive Analytics", "Intelligent Process Optimization"],
               },
               {
                 icon: Code,
@@ -338,7 +334,7 @@ export default function AgencyPortfolio() {
       <section id="projects" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="text-purple-600 border-purple-200 mb-4">
+            <Badge variant="outline" className="p-4 text-purple-600 border-purple-200 mb-4">
               Our Work
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
@@ -350,10 +346,11 @@ export default function AgencyPortfolio() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "E-commerce Platform",
+                title: "Pet Love E-commerce Website",
                 category: "Web Development",
-                image: "/placeholder.svg?height=400&width=600",
+                image: "/pet-love.png?height=400&width=600",
                 description: "Modern e-commerce solution with advanced features",
+                link: "https://petlovekw.com/"
               },
               {
                 title: "Brand Identity",
@@ -427,7 +424,7 @@ export default function AgencyPortfolio() {
       <section id="team" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="text-purple-600 border-purple-200 mb-4">
+            <Badge variant="outline" className="p-4 text-purple-600 border-purple-200 mb-4">
               Our Team
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Meet the Creators</h2>
@@ -440,25 +437,25 @@ export default function AgencyPortfolio() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                name: "Sarah Johnson",
-                role: "Creative Director",
+                name: "Talha Farooq",
+                role: "CEO",
                 image: "/placeholder.svg?height=400&width=400",
-                bio: "10+ years in brand design and creative strategy",
+                bio: "5+ years of experience in AI Automation and Full-Stack Development",
               },
               {
-                name: "Mike Chen",
-                role: "Lead Developer",
+                name: "Muhammad Abubaker",
+                role: "COO",
                 image: "/placeholder.svg?height=400&width=400",
                 bio: "Full-stack developer with expertise in modern frameworks",
               },
               {
-                name: "Emily Rodriguez",
-                role: "UX Designer",
+                name: "Bilal Anwar",
+                role: "Lead Developer",
                 image: "/placeholder.svg?height=400&width=400",
                 bio: "Passionate about creating intuitive user experiences",
               },
               {
-                name: "David Kim",
+                name: "Hassan Farooq",
                 role: "Project Manager",
                 image: "/placeholder.svg?height=400&width=400",
                 bio: "Ensures projects are delivered on time and within budget",
@@ -492,7 +489,7 @@ export default function AgencyPortfolio() {
       <section id="testimonials" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="text-purple-600 border-purple-200 mb-4">
+            <Badge variant="outline" className="p-4 text-purple-600 border-purple-200 mb-4">
               Testimonials
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
@@ -565,7 +562,7 @@ export default function AgencyPortfolio() {
       <section id="process" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="text-purple-600 border-purple-200 mb-4">
+            <Badge variant="outline" className="p-4 text-purple-600 border-purple-200 mb-4">
               Our Process
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">How We Work</h2>
@@ -622,7 +619,7 @@ export default function AgencyPortfolio() {
       <section id="contact" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="text-purple-600 border-purple-200 mb-4">
+            <Badge variant="outline" className="p-4 text-purple-600 border-purple-200 mb-4">
               Get In Touch
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Let's Start Your Project</h2>
@@ -717,7 +714,7 @@ export default function AgencyPortfolio() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">Project Type</label>
                     <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                       <option>Select a service</option>
-                      <option>Brand Design</option>
+                      <option>AI Automization</option>
                       <option>Web Development</option>
                       <option>Mobile App</option>
                       <option>Digital Marketing</option>
@@ -731,7 +728,7 @@ export default function AgencyPortfolio() {
                   </div>
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
+                    className="p-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
                     size="lg"
                   >
                     Send Message
@@ -753,7 +750,7 @@ export default function AgencyPortfolio() {
                 <img src="/logo1.png" alt="Norovix Logo" width={200} height={20} />
               </div>
               <p className="text-gray-400 mb-10 max-w-md">
-                We're a creative digital agency passionate about bringing your vision to life through innovative design
+                We're a Novorix Solutions agency passionate about bringing your vision to life through innovative design
                 and cutting-edge technology.
               </p>
               <div className="flex space-x-4">
@@ -789,7 +786,7 @@ export default function AgencyPortfolio() {
               <ul className="space-y-2 text-gray-400">
                 <li>
                   <Link href="#" className="hover:text-white transition-colors duration-200">
-                    Brand Design
+                    AI Automization
                   </Link>
                 </li>
                 <li>
@@ -819,7 +816,7 @@ export default function AgencyPortfolio() {
               <h4 className="text-lg font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="#" className="hover:text-white transition-colors duration-200">
+                  <Link href="#about" className="hover:text-white transition-colors duration-200">
                     About Us
                   </Link>
                 </li>
@@ -863,6 +860,6 @@ export default function AgencyPortfolio() {
           </div>
         </div>
       </footer>
-    </div>
+    </div >
   )
 }
