@@ -63,7 +63,7 @@ export default function ProjectsSection() {
   const hasMore = visibleCount < filteredProjects.length;
 
   return (
-    <section id="projects" className="relative py-20 overflow-hidden text-white">
+    <section id="projects" className="relative py-20 overflow-hidden bg-black text-white">
       {/* Background Blobs */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-150px] left-[-100px] w-[500px] h-[500px] bg-purple-600 opacity-10 rounded-full blur-[140px] animate-slow-pulse" />

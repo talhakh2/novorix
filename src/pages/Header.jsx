@@ -6,7 +6,7 @@ export default function Header({ scrollToSection, activeSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const navItems = ["home", "about", "services", "projects", "team", "testimonials", "process", "contact"];
+  const navItems = ["home", "about", "services", "projects", "team", "testimonials"];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,7 +65,7 @@ export default function Header({ scrollToSection, activeSection }) {
                 >
                   <span className="relative z-10 flex items-center justify-center">
                     <span className="transition-opacity duration-300 group-hover:opacity-0">
-                      Get Started
+                      Contact Us
                     </span>
                     <ArrowRight className="ml-1.5 w-4 h-4 transition-all duration-300 group-hover:-translate-x-6 group-hover:opacity-0" />
                     <ArrowRight className="w-4 h-4 absolute opacity-0 transition-all duration-300 translate-x-6 group-hover:opacity-100 group-hover:translate-x-0" />
