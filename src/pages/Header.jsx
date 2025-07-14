@@ -1,6 +1,7 @@
 // src/components/Header.jsx
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function Header({ scrollToSection, activeSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,16 +28,20 @@ export default function Header({ scrollToSection, activeSection }) {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex-shrink-0 group">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="flex-shrink-0 group focus:outline-none"
+            >
               <img
                 src="/logo1.png"
-                alt="Norovix Logo"
+                alt="Novorix Logo"
                 width={120}
                 height={40}
                 className="transition-all duration-300 group-hover:scale-[1.02]"
               />
-            </div>
+            </button>
           </div>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
@@ -67,8 +72,8 @@ export default function Header({ scrollToSection, activeSection }) {
                     <span className="transition-opacity duration-300 group-hover:opacity-0">
                       Contact Us
                     </span>
-                    <ArrowRight className="ml-1.5 w-4 h-4 transition-all duration-300 group-hover:-translate-x-6 group-hover:opacity-0" />
-                    <ArrowRight className="w-4 h-4 absolute opacity-0 transition-all duration-300 translate-x-6 group-hover:opacity-100 group-hover:translate-x-0" />
+                    {/* <Mail className="ml-1.5 w-4 h-4 transition-all duration-300 group-hover:-translate-x-6 group-hover:opacity-0" /> */}
+                    <Mail className="w-4 h-4 absolute opacity-0 transition-all duration-300 translate-x-6 group-hover:opacity-100 group-hover:translate-x-0" />
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-white to-white/95 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </button>
@@ -128,10 +133,10 @@ export default function Header({ scrollToSection, activeSection }) {
               >
                 <span className="relative flex items-center justify-center">
                   <span className="transition-opacity duration-300 group-hover:opacity-0">
-                    Get Started
+                    Contact Us
                   </span>
-                  <ArrowRight className="ml-2 h-4 w-4 transition-all duration-300 group-hover:-translate-x-6 group-hover:opacity-0" />
-                  <ArrowRight className="h-4 w-4 absolute opacity-0 transition-all duration-300 translate-x-6 group-hover:opacity-100 group-hover:translate-x-0" />
+                  {/* <ArrowRight className="ml-2 h-4 w-4 transition-all duration-300 group-hover:-translate-x-6 group-hover:opacity-0" /> */}
+                  <Mail className="h-4 w-4 absolute opacity-0 transition-all duration-300 translate-x-6 group-hover:opacity-100 group-hover:translate-x-0" />
                 </span>
               </button>
             </div>

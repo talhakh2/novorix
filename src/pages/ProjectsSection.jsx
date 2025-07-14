@@ -6,6 +6,7 @@ import projectsData from "./data/projects.json";
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { ArrowRight } from "lucide-react";
+import { ChevronDown } from "lucide-react"; // make sure this is imported
 
 const categories = ["All", ...Array.from(new Set(projectsData.map((p) => p.category)))];
 
@@ -94,11 +95,10 @@ export default function ProjectsSection() {
                 setSelectedCategory(category);
                 setVisibleCount(6);
               }}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                selectedCategory === category
-                  ? "bg-purple-600"
-                  : " hover:bg-purple-900"
-              }`}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${selectedCategory === category
+                ? "bg-purple-600"
+                : " hover:bg-purple-900"
+                }`}
             >
               {category}
             </button>
@@ -117,11 +117,19 @@ export default function ProjectsSection() {
           <div className="text-center mt-12">
             <button
               onClick={() => setVisibleCount((prev) => prev + 6)}
-              className="inline-flex items-center px-6 py-3 bg-white border border-gray-300 rounded-lg text-gray-800 hover:bg-gray-100 transition-colors duration-300"
+              className="group relative inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-black bg-white rounded-lg hover:bg-white/90 transition-all duration-200 overflow-hidden"
             >
-              Load More Projects
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <span className="relative z-10 flex items-center justify-center">
+                <span className="transition-opacity duration-300 group-hover:opacity-0">
+                  Load More
+                </span>
+                {/* <ChevronDown className="ml-1.5 w-4 h-4 transition-all duration-300 group-hover:-translate-y-4 group-hover:opacity-0" /> */}
+                <ChevronDown className="w-4 h-4 absolute opacity-0 transition-all duration-300 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white to-white/95 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
             </button>
+
+
           </div>
         )}
       </motion.div>

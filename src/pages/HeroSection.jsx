@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import { CalendarDays } from "lucide-react";
 import { Button } from "../../components/ui/button"
 import { Badge } from "../../components/ui/badge"
 import { TextGenerateEffect } from "../../components/ui/text-generate-effect";
@@ -30,7 +31,7 @@ export default function HeroSection() {
             variant="outline"
             className="text-xs tracking-wide uppercase mb-6 px-4 py-1 border border-white/10 bg-white/5 text-white rounded-full backdrop-blur-sm"
           >
-             Welcome to Novorix
+            Welcome to Novorix
           </Badge>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
@@ -42,31 +43,42 @@ export default function HeroSection() {
 
           <div className="text-base sm:text-xl mb-10 max-w-2xl mx-auto">
             <TextGenerateEffect words="A creative digital agency helping ambitious brands and startups scale through AI, web, and immersive design." />
-            
+
           </div>
 
-<div className="flex flex-col sm:flex-row justify-center gap-4 mt-6 sm:mt-8">
-  <Button
-    size="lg"
-    className="group relative flex items-center justify-center px-6 py-3 text-base font-semibold rounded-md bg-gradient-to-r from-purple-600 to-pink-600 hover:bg-transparent hover:border hover:border-white/20 text-white shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden"
-  >
-    <span className="relative flex items-center justify-center">
-      <span className="transition-opacity duration-300 group-hover:opacity-0">
-        See Our Work
-      </span>
-      <ArrowRight className="ml-2 h-5 w-5 transition-all duration-300 group-hover:-translate-x-8 group-hover:opacity-0" />
-      <ArrowRight className="h-5 w-5 absolute opacity-0 transition-all duration-300 translate-x-8 group-hover:opacity-100 group-hover:translate-x-0" />
-    </span>
-  </Button>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6 sm:mt-8">
+            <Button
+              size="lg"
+              className="group relative flex items-center justify-center px-6 py-3 text-base font-semibold rounded-md bg-gradient-to-r from-purple-600 to-pink-600 hover:bg-transparent hover:border hover:border-white/20 text-white shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden"
+              onClick={() => {
+                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              <span className="relative flex items-center justify-center">
+                <span className="transition-opacity duration-300 group-hover:opacity-0">
+                  See Our Work
+                </span>
+                <ArrowRight className="ml-2 h-5 w-5 transition-all duration-300 group-hover:-translate-x-8 group-hover:opacity-0" />
+                <ArrowRight className="h-5 w-5 absolute opacity-0 transition-all duration-300 translate-x-8 group-hover:opacity-100 group-hover:translate-x-0" />
+              </span>
+            </Button>
 
-  <Button
-    size="lg"
-    variant="outline"
-    className="flex items-center justify-center px-6 py-3 text-base font-semibold border border-white/20 text-white hover:bg-white/10 transition duration-200"
-  >
-    Get In Touch
-  </Button>
-</div>
+            <Button
+              size="lg"
+              variant="outline"
+              className="group relative flex items-center justify-center px-6 py-3 text-base font-semibold border border-white/20 text-white hover:bg-white/10 transition-all duration-300 overflow-hidden"
+              onClick={() => {
+                document.getElementById("schedule")?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              <span className="relative flex items-center justify-center">
+                <span className="transition-opacity duration-300 group-hover:opacity-0">
+                  Schedule Call
+                </span>
+                <CalendarDays className="ml-2 h-5 w-5 absolute opacity-0 transition-all duration-300 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0" />
+              </span>
+            </Button>
+          </div>
 
         </motion.div>
       </div>

@@ -14,13 +14,14 @@ import TeamSection from "./TeamSection";
 import TestimonialsSection from "./TestimonialsSection";
 // import ProcessSection from "./ProcessSection";
 import ContactSection from "./ContactSection";
+import ScheduleSection from "./ScheduleSection";
 
 export default function AgencyPortfolio() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "impact", "about", "services", "projects", "team", "testimonials", "process", "contact"];
+      const sections = ["home", "impact", "about", "services", "projects", "team", "testimonials", "schedule", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -59,6 +60,9 @@ export default function AgencyPortfolio() {
       <ProjectsSection />
       <TeamSection />
       <TestimonialsSection />
+      
+      <ScheduleSection/>
+
       {/* <ProcessSection /> */}
       <ContactSection />
 
