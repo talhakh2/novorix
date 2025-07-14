@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Ava Johnson",
+    "role": "CEO, PetCare Co.",
+    "text": "Novorix transformed our outdated website into a sleek, modern platform. Our traffic doubled within a month!",
+    "avatar": "/avatars/ava.jpg"
+  },
+  {
+    "name": "Liam Chen",
+    "role": "Founder, AI Insights",
+    "text": "Their AI automation services streamlined our internal operations significantly. Highly recommended.",
+    "avatar": "/avatars/liam.jpg"
+  },
+  {
+    "name": "Emily Rodriguez",
+    "role": "Marketing Lead, DigitalWave",
+    "text": "The design and UX improvements they made had an immediate impact on our conversion rates.",
+    "avatar": "/avatars/emily.jpg"
+  },
+  {
+    "name": "Noah Smith",
+    "role": "CTO, StartupX",
+    "text": "Reliable, creative, and always ahead of trends. Novorix is our go-to for every product launch.",
+    "avatar": "/avatars/noah.jpg"
+  },
+  {
+    "name": "Sophia Kim",
+    "role": "Operations Manager, GreenHub",
+    "text": "From concept to deployment, their team delivered an amazing mobile app right on schedule.",
+    "avatar": "/avatars/sophia.jpg"
+  },
+  {
+    "name": "Ethan Patel",
+    "role": "Co-Founder, EduStream",
+    "text": "We saw a 40% increase in engagement after their UI/UX revamp. Truly next-level work.",
+    "avatar": "/avatars/ethan.jpg"
+  }
+]

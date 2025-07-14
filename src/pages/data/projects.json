@@ -1,0 +1,86 @@
+[
+  {
+    "title": "PetLove Website",
+    "description": "A sleek responsive pet care site built with React.",
+    "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=400&fit=crop",
+    "category": "Web Development",
+    "link": "https://react-pet-care-demo.vercel.app"
+  },
+  {
+    "title": "Real Estate Platform",
+    "description": "A full-featured real estate listing web app.",
+    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
+    "category": "Web Development",
+    "link": "https://react-real-estate-demo.netlify.app"
+  },
+  {
+    "title": "Restaurant Ordering System",
+    "description": "Interactive food menu with POS integration.",
+    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
+    "category": "Web Development",
+    "link": "https://restaurant-ordering-demo.vercel.app"
+  },
+  {
+    "title": "AI SaaS Dashboard",
+    "description": "A powerful analytics dashboard for a SaaS AI startup.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    "category": "AI Automation",
+    "link": "https://ai-dashboard-demo.netlify.app"
+  },
+  {
+    "title": "AI Document Extractor",
+    "description": "Automated system for parsing scanned PDFs with AI.",
+    "image": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop",
+    "category": "AI Automation",
+    "link": "https://doc-ai-extractor-demo.vercel.app"
+  },
+  {
+    "title": "Marketing Landing Page",
+    "description": "Optimized landing page for high conversion.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    "category": "UI/UX Design",
+    "link": "https://marketing-landing-demo.netlify.app"
+  },
+  {
+    "title": "UX Redesign Case Study",
+    "description": "Complete redesign of an outdated web interface.",
+    "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop",
+    "category": "UI/UX Design",
+    "link": "https://ux-redesign-case-study.vercel.app"
+  },
+  {
+    "title": "Fitness Tracker App",
+    "description": "Cross-platform fitness app built in React Native.",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
+    "category": "Mobile Apps",
+    "link": "https://fitness-tracker-pwa.netlify.app"
+  },
+  {
+    "title": "E-commerce App",
+    "description": "Mobile e-commerce app with cart and payment integration.",
+    "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
+    "category": "Mobile Apps",
+    "link": "https://ecommerce-mobile-demo.vercel.app"
+  },
+  {
+    "title": "SEO Analytics Tool",
+    "description": "Dashboard for real-time SEO performance tracking.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    "category": "Digital Marketing",
+    "link": "https://seo-analytics-dashboard.netlify.app"
+  },
+  {
+    "title": "Lead Gen System",
+    "description": "Landing pages and funnel setup for B2B sales.",
+    "image": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600&h=400&fit=crop",
+    "category": "Digital Marketing",
+    "link": "https://leadgen-funnel-demo.vercel.app"
+  },
+  {
+    "title": "YouTube Growth Funnel",
+    "description": "Lead magnet, email drip, and retargeting ads.",
+    "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
+    "category": "Digital Marketing",
+    "link": "https://youtube-growth-demo.netlify.app"
+  }
+]

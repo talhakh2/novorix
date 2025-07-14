@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Talha Farooq",
+    "role": "CEO",
+    "position": "leadership",
+    "department": "Executive",
+    "bio": "Visionary leader with 10+ years in digital transformation and AI strategy.",
+    "fullMessage": "Sarah leads Novorix with a passion for innovation and excellence. Her strategic vision has guided countless businesses through digital transformation, making her a trusted advisor in the tech industry. She believes in empowering teams to achieve extraordinary results.",
+    "skills": ["Strategic Planning", "Business Development", "AI Strategy"],
+    "social": {
+      "linkedin": "https://linkedin.com/in/sarahjohnson",
+      "twitter": "https://twitter.com/sarahjohnson",
+      "email": "sarah@novorix.com"
+    }
+  },
+  {
+    "name": "M. Abubaker",
+    "role": "COO",
+    "position": "leadership",
+    "department": "Operations",
+    "bio": "Operations expert specializing in scaling tech companies and process optimization.",
+    "fullMessage": "Sarah leads Novorix with a passion for innovation and excellence. Her strategic vision has guided countless businesses through digital transformation, making her a trusted advisor in the tech industry. She believes in empowering teams to achieve extraordinary results.",
+    "skills": ["Operations Management", "Team Leadership", "Process Optimization"],
+    "social": {
+      "linkedin": "https://linkedin.com/in/michaelchen",
+      "github": "https://github.com/michaelchen",
+      "email": "michael@novorix.com"
+    }
+  },
+  {
+    "name": "Emily Rodriguez",
+    "role": "Lead Developer",
+    "position": "team",
+    "department": "Development",
+    "bio": "Full-stack developer passionate about creating scalable web applications.",
+    "skills": ["React", "Node.js", "Python", "AWS"],
+    "social": {
+      "linkedin": "https://linkedin.com/in/emilyrodriguez",
+      "github": "https://github.com/emilyrodriguez",
+      "email": "emily@novorix.com"
+    }
+  },
+  {
+    "name": "David Kim",
+    "role": "AI/ML Engineer",
+    "position": "team",
+    "department": "AI & Automation",
+    "bio": "Machine learning specialist focused on developing intelligent automation solutions.",
+    "skills": ["Python", "TensorFlow", "PyTorch", "MLOps"],
+    "social": {
+      "linkedin": "https://linkedin.com/in/davidkim",
+      "github": "https://github.com/davidkim",
+      "email": "david@novorix.com"
+    }
+  },
+  {
+    "name": "Lisa Thompson",
+    "role": "UI/UX Designer",
+    "position": "team",
+    "department": "Design",
+    "bio": "Creative designer with expertise in user-centered design and brand development.",
+    "skills": ["Figma", "Adobe Creative Suite", "User Research", "Prototyping"],
+    "social": {
+      "linkedin": "https://linkedin.com/in/lisathompson",
+      "twitter": "https://twitter.com/lisathompson",
+      "email": "lisa@novorix.com"
+    }
+  },
+  {
+    "name": "James Wilson",
+    "role": "Digital Marketing",
+    "position": "team",
+    "department": "Marketing",
+    "bio": "Marketing strategist driving growth through data-driven digital campaigns.",
+    "skills": ["SEO", "Google Ads", "Analytics", "Content Strategy"],
+    "social": {
+      "linkedin": "https://linkedin.com/in/jameswilson",
+      "twitter": "https://twitter.com/jameswilson",
+      "email": "james@novorix.com"
+    }
+  },
+  {
+    "name": "Rachel Martinez",
+    "role": "Mobile App Developer",
+    "position": "team",
+    "department": "Development",
+    "bio": "Mobile development expert creating cross-platform applications.",
+    "skills": ["React Native", "Flutter", "iOS", "Android"],
+    "social": {
+      "linkedin": "https://linkedin.com/in/rachelmartinez",
+      "github": "https://github.com/rachelmartinez",
+      "email": "rachel@novorix.com"
+    }
+  },
+  {
+    "name": "Alex Turner",
+    "role": "Project Manager",
+    "position": "team",
+    "department": "Operations",
+    "bio": "Agile project manager ensuring smooth delivery of client projects.",
+    "skills": ["Scrum", "Jira", "Risk Management", "Client Relations"],
+    "social": {
+      "linkedin": "https://linkedin.com/in/alexturner",
+      "email": "alex@novorix.com"
+    }
+  }
+]
