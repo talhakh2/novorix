@@ -35,14 +35,14 @@ export default function HeroSection() {
           </Badge>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            We Build{" "}
+            Smart Solutions,{" "}
             <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
-              Futuristic Experiences
+              Real Impact.
             </span>
           </h1>
 
           <div className="text-base sm:text-xl mb-10 max-w-2xl mx-auto">
-            <TextGenerateEffect words="A creative digital agency helping ambitious brands and startups scale through AI, web, and immersive design." />
+            <TextGenerateEffect words="A creative agency helping ambitious brands and startups scale through AI, web, and immersive technology." />
 
           </div>
 

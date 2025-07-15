@@ -10,9 +10,100 @@ import reviewsData from "./data/reviews.json";
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const visibleCount = 3;
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [dragStart, setDragStart] = useState(0);
+  const [dragEnd, setDragEnd] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  
+  // Responsive visible count
+  const getVisibleCount = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 640) return 1; // Mobile
+      if (window.innerWidth < 1024) return 2; // Tablet
+      return 3; // Desktop
+    }
+    return 3;
+  };
+
+  const [visibleCount, setVisibleCount] = useState(getVisibleCount());
   const maxLines = 2;
   const [expanded, setExpanded] = useState({});
+
+  // Handle resize
+  useEffect(() => {
+    const handleResize = () => {
+      setVisibleCount(getVisibleCount());
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Touch handlers
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+    
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
+
+  // Mouse drag handlers for laptop/desktop
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setDragStart(e.clientX);
+    e.preventDefault(); // Prevent text selection
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    setDragEnd(e.clientX);
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging || !dragStart) return;
+    
+    const distance = dragStart - dragEnd;
+    const isLeftDrag = distance > 50;
+    const isRightDrag = distance < -50;
+
+    if (isLeftDrag) {
+      nextSlide();
+    } else if (isRightDrag) {
+      prevSlide();
+    }
+    
+    setIsDragging(false);
+    setDragStart(0);
+    setDragEnd(0);
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      setIsDragging(false);
+      setDragStart(0);
+      setDragEnd(0);
+    }
+  };
 
   const nextSlide = () => {
     if (isTransitioning) return;
@@ -137,8 +228,18 @@ export default function TestimonialsSection() {
 
           <div className="relative px-4 py-8">
             <motion.div 
-              className="flex items-start justify-center gap-6"
-              style={{ perspective: "1000px" }}
+              className="flex items-start justify-center gap-6 select-none"
+              style={{ 
+                perspective: "1000px",
+                cursor: isDragging ? "grabbing" : "grab"
+              }}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseLeave}
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
@@ -147,7 +248,7 @@ export default function TestimonialsSection() {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className="flex items-start justify-center gap-6"
+                  className="flex items-start justify-center gap-6 w-full"
                 >
                   {visibleReviews.map((review, index) => (
                     <motion.div
@@ -200,12 +301,12 @@ export default function TestimonialsSection() {
                           </motion.div>
                           <motion.div 
                             variants={textVariants}
-                            className="flex items-center justify-center gap-4"
+                            className="flex items-center justify-center gap-3 sm:gap-4"
                           >
                             <motion.img
                               src={review.avatar || "/placeholder.svg"}
                               alt={review.name}
-                              className="w-10 h-10 rounded-full object-cover border border-white/10"
+                              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border border-white/10"
                               onError={(e) => {
                                 e.currentTarget.onerror = null;
                                 e.currentTarget.src = "/placeholder.svg";
@@ -246,33 +347,24 @@ export default function TestimonialsSection() {
               </AnimatePresence>
             </motion.div>
 
-            {/* Navigation Arrows */}
-            <motion.button
-              onClick={prevSlide}
-              disabled={isTransitioning}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-white border border-gray-300 rounded-full shadow hover:bg-gray-100 p-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              whileHover={{ scale: 1.1, x: -2 }}
-              whileTap={{ scale: 0.9 }}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
-              style={{ marginTop: "2rem" }}
-            >
-              <ChevronLeft className="h-5 w-5 text-gray-600" />
-            </motion.button>
-            <motion.button
-              onClick={nextSlide}
-              disabled={isTransitioning}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-white border border-gray-300 rounded-full shadow hover:bg-gray-100 p-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              whileHover={{ scale: 1.1, x: 2 }}
-              whileTap={{ scale: 0.9 }}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
-              style={{ marginTop: "2rem" }}
-            >
-              <ChevronRight className="h-5 w-5 text-gray-600" />
-            </motion.button>
+            {/* Dots indicator */}
+            <div className="flex justify-center mt-6 gap-2">
+              {Array(Math.ceil(reviewsData.length / visibleCount))
+                .fill(0)
+                .map((_, index) => (
+                  <motion.button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      Math.floor(currentIndex / visibleCount) === index
+                        ? "bg-purple-500"
+                        : "bg-gray-600"
+                    }`}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.8 }}
+                  />
+                ))}
+            </div>
           </div>
         </motion.div>
       </div>

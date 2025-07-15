@@ -13,7 +13,7 @@ export default function ScheduleSection() {
   return (
     <section
       id="schedule"
-      className="relative w-full min-h-screen text-white flex items-center justify-center py-20 px-4"
+      className="bg-black relative w-full min-h-screen text-white flex items-center justify-center py-20 px-4"
     >
       <div className="w-full max-w-5xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-3">

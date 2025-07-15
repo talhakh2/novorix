@@ -1,11 +1,11 @@
 [
   {
     "name": "Talha Farooq",
-    "role": "CEO",
+    "role": "Co-founder",
     "position": "leadership",
     "department": "Executive",
     "bio": "Visionary leader with 10+ years in digital transformation and AI strategy.",
-    "fullMessage": "Sarah leads Novorix with a passion for innovation and excellence. Her strategic vision has guided countless businesses through digital transformation, making her a trusted advisor in the tech industry. She believes in empowering teams to achieve extraordinary results.",
+    "fullMessage": "With over 5 years of experience in AI automation and full-stack development. A results-driven technologist and strong leader, known for turning complex ideas into impactful digital solutions while inspiring teams to deliver their best.",
     "skills": ["Strategic Planning", "Business Development", "AI Strategy"],
     "social": {
       "linkedin": "https://linkedin.com/in/sarahjohnson",
@@ -15,11 +15,11 @@
   },
   {
     "name": "M. Abubaker",
-    "role": "COO",
+    "role": "Co-founder",
     "position": "leadership",
     "department": "Operations",
     "bio": "Operations expert specializing in scaling tech companies and process optimization.",
-    "fullMessage": "Sarah leads Novorix with a passion for innovation and excellence. Her strategic vision has guided countless businesses through digital transformation, making her a trusted advisor in the tech industry. She believes in empowering teams to achieve extraordinary results.",
+    "fullMessage": "A full-stack developer with 5+ years of experience in building robust web solutions. I combine deep technical expertise with strong management skills to lead projects efficiently, ensuring high-quality outcomes and seamless team collaboration.",
     "skills": ["Operations Management", "Team Leadership", "Process Optimization"],
     "social": {
       "linkedin": "https://linkedin.com/in/michaelchen",
@@ -28,7 +28,7 @@
     }
   },
   {
-    "name": "Emily Rodriguez",
+    "name": "Hassan Riaz",
     "role": "Lead Developer",
     "position": "team",
     "department": "Development",
@@ -41,7 +41,7 @@
     }
   },
   {
-    "name": "David Kim",
+    "name": "Umer Ali",
     "role": "AI/ML Engineer",
     "position": "team",
     "department": "AI & Automation",
@@ -54,7 +54,7 @@
     }
   },
   {
-    "name": "Lisa Thompson",
+    "name": "Sara Khan",
     "role": "UI/UX Designer",
     "position": "team",
     "department": "Design",
@@ -67,7 +67,7 @@
     }
   },
   {
-    "name": "James Wilson",
+    "name": "Maryam Raza",
     "role": "Digital Marketing",
     "position": "team",
     "department": "Marketing",
@@ -80,7 +80,7 @@
     }
   },
   {
-    "name": "Rachel Martinez",
+    "name": "Hamza Ali",
     "role": "Mobile App Developer",
     "position": "team",
     "department": "Development",
@@ -93,7 +93,7 @@
     }
   },
   {
-    "name": "Alex Turner",
+    "name": "Abdullah Rasheed",
     "role": "Project Manager",
     "position": "team",
     "department": "Operations",

@@ -1,10 +1,10 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
-import { Linkedin, Twitter, Github, Mail, X, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { Linkedin, Twitter, Github, Mail, X } from "lucide-react";
 
 import teamData from "./data/team.json"
 
@@ -12,33 +12,124 @@ export default function TeamSection() {
   const [selectedMember, setSelectedMember] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [dragStart, setDragStart] = useState(0);
+  const [dragEnd, setDragEnd] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   
   const topMembers = teamData.slice(0, 2); // First 2 members
   const otherMembers = teamData.slice(2); // Remaining members
   
-  const itemsPerPage = 4; // Number of team members to show at once
-  const totalPages = Math.ceil(otherMembers.length / itemsPerPage);
-  
-  const getVisibleMembers = () => {
-    const startIndex = currentIndex * itemsPerPage;
-    return otherMembers.slice(startIndex, startIndex + itemsPerPage);
+  // Responsive visible count
+  const getVisibleCount = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 640) return 1; // Mobile
+      if (window.innerWidth < 1024) return 2; // Tablet
+      return 3; // Desktop
+    }
+    return 3;
   };
-  
+
+  const [visibleCount, setVisibleCount] = useState(getVisibleCount());
+
+  // Handle resize
+  useEffect(() => {
+    const handleResize = () => {
+      setVisibleCount(getVisibleCount());
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Touch handlers
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+    
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
+
+  // Mouse drag handlers for laptop/desktop
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setDragStart(e.clientX);
+    e.preventDefault(); // Prevent text selection
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    setDragEnd(e.clientX);
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging || !dragStart) return;
+    
+    const distance = dragStart - dragEnd;
+    const isLeftDrag = distance > 50;
+    const isRightDrag = distance < -50;
+
+    if (isLeftDrag) {
+      nextSlide();
+    } else if (isRightDrag) {
+      prevSlide();
+    }
+    
+    setIsDragging(false);
+    setDragStart(0);
+    setDragEnd(0);
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      setIsDragging(false);
+      setDragStart(0);
+      setDragEnd(0);
+    }
+  };
+
   const nextSlide = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentIndex((prev) => (prev + 1) % totalPages);
+    setCurrentIndex((prevIndex) =>
+      prevIndex + 1 < otherMembers.length - visibleCount + 1 ? prevIndex + 1 : 0
+    );
     setTimeout(() => setIsTransitioning(false), 600);
   };
-  
+
   const prevSlide = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
+    setCurrentIndex((prevIndex) =>
+      prevIndex - 1 >= 0 ? prevIndex - 1 : otherMembers.length - visibleCount
+    );
     setTimeout(() => setIsTransitioning(false), 600);
   };
-  
-  const visibleMembers = getVisibleMembers();
+
+  const visibleMembers = otherMembers.slice(
+    currentIndex,
+    currentIndex + visibleCount
+  );
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -134,10 +225,10 @@ export default function TeamSection() {
       onClick={() => isTop && setSelectedMember(member)}
     >
       <Card className={`h-full border border-white/10 hover:border-white/30 shadow-xl hover:shadow-white/10 transition-all duration-300 backdrop-blur bg-white/5 ${isTop ? 'cursor-pointer' : ''}`}>
-        <CardContent className={`${isTop ? 'p-6 px-12' : 'p-4'} text-center`}>
+        <CardContent className={`${isTop ? 'p-6 px-12' : 'p-6'} text-center`}>
           {/* Avatar placeholder - with entrance animation */}
           <motion.div 
-            className="w-10 h-10 mb-3 mx-auto rounded-full border-2 border-white/30 flex items-center justify-center text-white font-bold text-sm"
+            className={`${isTop ? 'w-12 h-12 text-base' : 'w-8 h-8 text-sm'} mb-3 mx-auto rounded-full border-2 border-white/30 flex items-center justify-center text-white font-bold`}
             initial={{ scale: 0, rotate: -90 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ 
@@ -152,7 +243,7 @@ export default function TeamSection() {
           
           <motion.h3 
             variants={textVariants}
-            className="text-base font-bold text-white mb-2"
+            className="text-base font-semibold text-white mb-3"
           >
             {member.name}
           </motion.h3>
@@ -169,7 +260,7 @@ export default function TeamSection() {
           {isTop && (
             <motion.p 
               variants={textVariants}
-              className="text-xs text-gray-400 mt-2"
+              className="text-sm text-gray-400 mt-2"
             >
               Click to learn more
             </motion.p>
@@ -245,10 +336,10 @@ export default function TeamSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
             Meet Our Team
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             The passionate individuals behind Novorix Solutions, dedicated to delivering exceptional digital experiences.
           </p>
         </motion.div>
@@ -277,11 +368,21 @@ export default function TeamSection() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Other Team Members - With Navigation */}
+        {/* Other Team Members - With Testimonials Style Navigation */}
         <div className="relative px-4 py-8">
-          <motion.div
-            className="flex items-start justify-center gap-6"
-            style={{ perspective: "1000px" }}
+          <motion.div 
+            className="flex items-start justify-center gap-6 select-none"
+            style={{ 
+              perspective: "1000px",
+              cursor: isDragging ? "grabbing" : "grab"
+            }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
           >
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
@@ -290,7 +391,7 @@ export default function TeamSection() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="flex items-start justify-center gap-6"
+                className="flex items-start justify-center gap-6 w-full"
               >
                 {visibleMembers.map((member, index) => (
                   <motion.div
@@ -301,9 +402,9 @@ export default function TeamSection() {
                     style={{ transformOrigin: "center center" }}
                   >
                     <Card className="h-full border border-white/10 hover:border-white/30 shadow-xl hover:shadow-white/10 transition-all duration-300 backdrop-blur bg-white/5">
-                      <CardContent className="p-4 text-center">
+                      <CardContent className="p-6 text-center">
                         <motion.div 
-                          className="w-10 h-10 mb-3 mx-auto rounded-full border-2 border-white/30 flex items-center justify-center text-white font-bold text-sm"
+                          className="w-8 h-8 mb-3 mx-auto rounded-full border-2 border-white/30 flex items-center justify-center text-white font-bold text-sm"
                           initial={{ scale: 0, rotate: -90 }}
                           animate={{ scale: 1, rotate: 0 }}
                           transition={{ 
@@ -318,7 +419,7 @@ export default function TeamSection() {
                         
                         <motion.h3 
                           variants={textVariants}
-                          className="text-base font-bold text-white mb-2"
+                          className="text-base font-semibold text-white mb-3"
                         >
                           {member.name}
                         </motion.h3>
@@ -339,34 +440,24 @@ export default function TeamSection() {
             </AnimatePresence>
           </motion.div>
 
-          {/* Navigation Arrows */}
-          <motion.button
-            onClick={prevSlide}
-            disabled={isTransitioning}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-white border border-gray-300 rounded-full shadow hover:bg-gray-100 p-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            whileHover={{ scale: 1.1, x: -2 }}
-            whileTap={{ scale: 0.9 }}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8 }}
-            style={{ marginTop: "2rem" }}
-          >
-            <ChevronLeft className="h-5 w-5 text-gray-600" />
-          </motion.button>
-          
-          <motion.button
-            onClick={nextSlide}
-            disabled={isTransitioning}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-white border border-gray-300 rounded-full shadow hover:bg-gray-100 p-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            whileHover={{ scale: 1.1, x: 2 }}
-            whileTap={{ scale: 0.9 }}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8 }}
-            style={{ marginTop: "2rem" }}
-          >
-            <ChevronRight className="h-5 w-5 text-gray-600" />
-          </motion.button>
+          {/* Dots indicator */}
+          <div className="flex justify-center mt-6 gap-2">
+            {Array(Math.ceil(otherMembers.length / visibleCount))
+              .fill(0)
+              .map((_, index) => (
+                <motion.button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    Math.floor(currentIndex / visibleCount) === index
+                      ? "bg-white"
+                      : "bg-gray-600"
+                  }`}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.8 }}
+                />
+              ))}
+          </div>
         </div>
       </div>
 
