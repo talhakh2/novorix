@@ -8,7 +8,7 @@ const sections = [
   {
     title: "Who We Are",
     description:
-      "Founded in 2022, Novorix Solutions began as a vision to merge creativity with technology — a small team of innovators determined to build smarter digital experiences.",
+      "Founded in 2022, Novorix Solutions began as a vision to merge creativity with technology — a small team of innovators determined to build smarter digital experiences. Over the years, we’ve grown into a full-service agency, delivering powerful solutions in AI automation, web development, mobile apps, digital marketing, and UI/UX design.Our approach blends strategic insight with bold creativity, ensuring every project not only looks great but drives real, measurable results. At Novorix, we don’t just build digital products — we build digital impact.",
     bg: "bg-black",
     textColor: "text-white",
     headerGradient: "bg-gradient-to-r from-white via-white to-gray-300 bg-clip-text text-transparent",
@@ -18,7 +18,7 @@ const sections = [
   {
     title: "Our Mission",
     description:
-      "Our approach blends strategic insight with bold creativity, ensuring every project not only looks great but drives real, measurable results.",
+      "At Novorix Solutions, we’re a team of creative professionals passionate about bringing your vision to life through innovative design, intelligent automation, and cutting-edge technology. From websites and mobile apps to AI solutions and digital marketing — we craft experiences that drive real results.",
     bg: "bg-white",
     textColor: "text-black",
     headerGradient: "bg-gradient-to-r from-black via-gray-800 to-gray-600 bg-clip-text text-transparent",

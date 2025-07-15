@@ -1,24 +1,59 @@
 [
   {
-    "title": "PetLove Website",
-    "description": "A sleek responsive pet care site built with React.",
-    "image": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=400&fit=crop",
+    "title": "VIBEAT",
+    "description": "A sleek responsive event booking website.",
+    "image": "/event.png?width=600&height=400&fit=crop",
     "category": "Web Development",
-    "link": "https://react-pet-care-demo.vercel.app"
+    "link": "https://vibeat.io/"
   },
   {
-    "title": "Real Estate Platform",
-    "description": "A full-featured real estate listing web app.",
-    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
+    "title": "PET LOVE",
+    "description": "A sleek, responsive e-commerce website for pet products.",
+    "image": "/pet-love.png?w=600&h=400&fit=crop",
     "category": "Web Development",
-    "link": "https://react-real-estate-demo.netlify.app"
+    "link": "https://petlovekw.com/"
   },
   {
-    "title": "Restaurant Ordering System",
-    "description": "Interactive food menu with POS integration.",
-    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop",
+    "title": "GMB LIMITED",
+    "description": "Trade finance website for GMB Limited.",
+    "image": "/gmb.jpg?w=600&h=400&fit=crop",
     "category": "Web Development",
-    "link": "https://restaurant-ordering-demo.vercel.app"
+    "link": "https://gmbuae.com/"
+  },
+  {
+    "title": "SWEENEY",
+    "description": "A sleek, responsive website for marketing services.",
+    "image": "/sweeney.jpg?w=600&h=400&fit=crop",
+    "category": "Web Development",
+    "link": "https://gmbuae.com/"
+  },
+  {
+    "title": "TAABAAWI Ecomerence Platform",
+    "description": "A sleek, responsive website for ecomerence.",
+    "image": "/taabaawi.jpg?w=600&h=400&fit=crop",
+    "category": "Web Development",
+    "link": "https://taabaawi.com/"
+  },
+  {
+    "title": "LION AGENCY",
+    "description": "A sleek, responsive website for branding and marketing agency.",
+    "image": "/lion.jpg?w=600&h=400&fit=crop",
+    "category": "Web Development",
+    "link": "https://lionagency.com/"
+  },
+  {
+    "title": "TOPLINE RV & Marine",
+    "description": "A sleek, responsive website for Marine, Powersport & RV Services.",
+    "image": "/topline.jpg?w=600&h=400&fit=crop",
+    "category": "Web Development",
+    "link": "https://toplinervandmarine.com/"
+  },
+  {
+    "title": "MOTRIDE",
+    "description": "A sleek, responsive ecomerence website for motorbike accessories.",
+    "image": "/motride.jpg?w=600&h=400&fit=crop",
+    "category": "Web Development",
+    "link": "https://motride.com/"
   },
   {
     "title": "AI SaaS Dashboard",
@@ -49,18 +84,32 @@
     "link": "https://ux-redesign-case-study.vercel.app"
   },
   {
-    "title": "Fitness Tracker App",
-    "description": "Cross-platform fitness app built in React Native.",
-    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
+    "title": "Ride Booking App",
+    "description": "Ride Bokking app built in React Native.",
+    "image": "/app1.png?w=600&h=400&fit=crop",
     "category": "Mobile Apps",
-    "link": "https://fitness-tracker-pwa.netlify.app"
+    "link": "https://play.google.com/store/apps/details?id=com.smiletech.user&hl=en"
   },
   {
-    "title": "E-commerce App",
-    "description": "Mobile e-commerce app with cart and payment integration.",
-    "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
+    "title": "Smile Take Captain",
+    "description": "Smile Take Captain is the dedicated app for drivers built in React Native.",
+    "image": "/app2.png?w=600&h=400&fit=crop",
     "category": "Mobile Apps",
-    "link": "https://ecommerce-mobile-demo.vercel.app"
+    "link": "https://play.google.com/store/apps/details?id=com.smiletech.driver&hl=en"
+  },
+  {
+    "title": "HM Store App",
+    "description": "Mobile e-commerce app with cart and payment integration.",
+    "image": "/app3.png?w=600&h=400&fit=crop",
+    "category": "Mobile Apps",
+    "link": "https://play.google.com/store/apps/details?id=com.app.hm.store&hl=en"
+  },
+  {
+    "title": "Pet Store App",
+    "description": "Mobile e-commerce Pet products app with cart and payment integration.",
+    "image": "/app4.png?w=600&h=400&fit=crop",
+    "category": "Mobile Apps",
+    "link": "https://play.google.com/store/apps/details?id=com.ordable.petstore&hl=en"
   },
   {
     "title": "SEO Analytics Tool",

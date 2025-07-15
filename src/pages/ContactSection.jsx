@@ -18,6 +18,7 @@ export default function ContactSection() {
   const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
 
   const services = [
+    "AI Automization",
     "Web Development",
     "Mobile App Development", 
     "UI/UX Design",
