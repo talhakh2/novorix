@@ -39,6 +39,7 @@ const services = [
       "Performance Optimization",
     ],
   },
+  // ta
   {
     icon: Smartphone,
     title: "Mobile Apps",
