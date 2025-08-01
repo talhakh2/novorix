@@ -56,7 +56,7 @@ export default function AgencyPortfolio() {
       <HeroSection scrollToSection={scrollToSection} />
       <ImpactSection />
       <AboutSection />
-      {/* <ServicesSection /> */}
+      <ServicesSection />
       <ProjectsSection />
       <TeamSection />
       <TestimonialsSection />
