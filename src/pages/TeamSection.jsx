@@ -220,15 +220,15 @@ export default function TeamSection() {
     <motion.div
       variants={cardVariants}
       whileHover="hover"
-      className={`w-full ${isTop ? 'max-w-md' : 'max-w-xs'} relative z-10`}
+      className={`w-full ${isTop ? 'max-w-sm sm:max-w-xs lg:max-w-md' : 'max-w-xs'} relative z-10`}
       style={{ transformOrigin: "center center" }}
       onClick={() => isTop && setSelectedMember(member)}
     >
       <Card className={`h-full border border-white/10 hover:border-white/30 shadow-xl hover:shadow-white/10 transition-all duration-300 backdrop-blur bg-white/5 ${isTop ? 'cursor-pointer' : ''}`}>
-        <CardContent className={`${isTop ? 'p-6 px-12' : 'p-6'} text-center`}>
+        <CardContent className={`${isTop ? 'p-6 sm:p-4 lg:p-6 px-6 sm:px-4 lg:px-8' : 'p-6'} text-center`}>
           {/* Avatar placeholder - with entrance animation */}
           <motion.div 
-            className={`${isTop ? 'w-12 h-12 text-base' : 'w-8 h-8 text-sm'} mb-3 mx-auto rounded-full border-2 border-white/30 flex items-center justify-center text-white font-bold`}
+            className={`${isTop ? 'w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-base sm:text-sm lg:text-base' : 'w-8 h-8 text-sm'} mb-3 sm:mb-2 lg:mb-3 mx-auto rounded-full border-2 border-white/30 flex items-center justify-center text-white font-bold`}
             initial={{ scale: 0, rotate: -90 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ 
@@ -243,7 +243,7 @@ export default function TeamSection() {
           
           <motion.h3 
             variants={textVariants}
-            className="text-base font-semibold text-white mb-3"
+            className={`${isTop ? 'text-base sm:text-base lg:text-lg' : 'text-base'} font-semibold text-white mb-3 sm:mb-2 lg:mb-3`}
           >
             {member.name}
           </motion.h3>
@@ -252,15 +252,15 @@ export default function TeamSection() {
             variants={textVariants}
             className="mb-3"
           >
-            <Badge variant="secondary" className="text-xs tracking-wide uppercase px-4 py-1 border border-white/10 bg-white/5 text-white rounded-full backdrop-blur-sm">
-              {member.role}
+            <Badge variant="secondary" className="text-xs sm:text-xs tracking-wide px-3 sm:px-3 py-1 border border-white/10 bg-white/5 text-white rounded-full backdrop-blur-sm whitespace-nowrap">
+              CO-FOUNDER
             </Badge>
           </motion.div>
           
           {isTop && (
             <motion.p 
               variants={textVariants}
-              className="text-sm text-gray-400 mt-2"
+              className="text-sm sm:text-xs lg:text-sm text-gray-400 mt-2 sm:mt-1 lg:mt-2"
             >
               Click to learn more
             </motion.p>
@@ -298,8 +298,8 @@ export default function TeamSection() {
             {member.name.split(' ').map(n => n[0]).join('')}
           </div>
           <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-          <Badge variant="secondary" className="text-xs tracking-wide uppercase px-4 py-1 border border-white/10 bg-white/5 text-white rounded-full backdrop-blur-sm">
-            {member.role}
+          <Badge variant="secondary" className="text-xs tracking-wide px-3 py-1 border border-white/10 bg-white/5 text-white rounded-full backdrop-blur-sm whitespace-nowrap">
+            CO-FOUNDER
           </Badge>
         </div>
         
@@ -328,7 +328,7 @@ export default function TeamSection() {
 
   return (
     <section id="team" className="relative w-full py-20 bg-black text-white scroll-mt-16 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-2 sm:px-4 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -350,7 +350,7 @@ export default function TeamSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="flex flex-row justify-center gap-6 mb-16"
+          className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16"
           style={{ perspective: "1000px" }}
         >
           <AnimatePresence mode="wait" initial={false}>
@@ -359,7 +359,7 @@ export default function TeamSection() {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="flex flex-row justify-center gap-6"
+              className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 lg:gap-8"
             >
               {topMembers.map((member, index) => (
                 <TeamCard key={index} member={member} isTop={true} />
@@ -369,7 +369,7 @@ export default function TeamSection() {
         </motion.div>
 
         {/* Other Team Members - With Testimonials Style Navigation */}
-        <div className="relative px-4 py-8">
+        <div className="relative px-2 sm:px-4 py-4 sm:py-6 lg:py-8">
           <motion.div 
             className="flex items-start justify-center gap-6 select-none"
             style={{ 
@@ -428,7 +428,7 @@ export default function TeamSection() {
                           variants={textVariants}
                           className="mb-3"
                         >
-                          <Badge variant="secondary" className="text-xs tracking-wide uppercase px-4 py-1 border border-white/10 bg-white/5 text-white rounded-full backdrop-blur-sm">
+                          <Badge variant="secondary" className="text-xs tracking-wide px-3 py-1 border border-white/10 bg-white/5 text-white rounded-full backdrop-blur-sm whitespace-nowrap">
                             {member.role}
                           </Badge>
                         </motion.div>

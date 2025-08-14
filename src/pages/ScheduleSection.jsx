@@ -24,7 +24,7 @@ export default function ScheduleSection() {
         </p>
         <div
           className="calendly-inline-widget w-full"
-          data-url="https://calendly.com/talha-prostructengineering/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1&background_color=101010&text_color=ffffff&primary_color=ffffff"
+          data-url="https://calendly.com/contact-novorixsol/15min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=101010&text_color=ffffff&primary_color=ffffff"
           style={{ minWidth: "320px", height: "800px" }}
         />
       </div>
