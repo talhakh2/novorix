@@ -10,26 +10,26 @@ export default function Footer() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/novorix/about/?viewAsMember=true", label: "LinkedIn" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Github, href: "#", label: "GitHub" }
+    { icon: Github, href: "https://github.com/talhakh2", label: "GitHub" }
   ];
 
   const services = [
-    "Brand Strategy",
-    "Web Development", 
-    "Mobile Applications",
-    "Digital Marketing",
-    "User Experience"
+    { name: "Brand Strategy", href: "#services" },
+    { name: "Web Development", href: "#services" }, 
+    { name: "Mobile Applications", href: "#services" },
+    { name: "Digital Marketing", href: "#services" },
+    { name: "User Experience", href: "#services" }
   ];
 
   const company = [
-    "About",
-    "Work", 
-    "Team",
-    "Contact",
-    "Insights"
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" }, 
+    { name: "Team", href: "#team" },
+    { name: "Contact", href: "#contact" },
+    { name: "Projects", href: "#projects" }
   ];
 
   const handleNewsletterSubmit = (e) => {
@@ -43,6 +43,18 @@ export default function Footer() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollToSection = (href) => {
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
   };
 
   return (
@@ -156,21 +168,21 @@ export default function Footer() {
               </h4>
               <nav className="space-y-4">
                 {services.map((service, i) => (
-                  <motion.a
+                  <motion.button
                     key={i}
-                    href="#"
+                    onClick={() => scrollToSection(service.href)}
                     onMouseEnter={() => setHoveredIndex(`service-${i}`)}
                     onMouseLeave={() => setHoveredIndex(null)}
                     whileHover={{ x: 8 }}
-                    className="block text-white/60 hover:text-white transition-all duration-300 group"
+                    className="block text-white/60 hover:text-white transition-all duration-300 group text-left w-full"
                   >
                     <div className="flex items-center">
-                      <span className="text-sm">{service}</span>
+                      <span className="text-sm">{service.name}</span>
                       <ArrowRight className={`w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ${
                         hoveredIndex === `service-${i}` ? 'translate-x-1' : ''
                       }`} />
                     </div>
-                  </motion.a>
+                  </motion.button>
                 ))}
               </nav>
             </motion.div>
@@ -188,21 +200,21 @@ export default function Footer() {
               </h4>
               <nav className="space-y-4">
                 {company.map((item, i) => (
-                  <motion.a
+                  <motion.button
                     key={i}
-                    href="#"
+                    onClick={() => scrollToSection(item.href)}
                     onMouseEnter={() => setHoveredIndex(`company-${i}`)}
                     onMouseLeave={() => setHoveredIndex(null)}
                     whileHover={{ x: 8 }}
-                    className="block text-white/60 hover:text-white transition-all duration-300 group"
+                    className="block text-white/60 hover:text-white transition-all duration-300 group text-left w-full"
                   >
                     <div className="flex items-center">
-                      <span className="text-sm">{item}</span>
+                      <span className="text-sm">{item.name}</span>
                       <ArrowRight className={`w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ${
                         hoveredIndex === `company-${i}` ? 'translate-x-1' : ''
                       }`} />
                     </div>
-                  </motion.a>
+                  </motion.button>
                 ))}
               </nav>
             </motion.div>
@@ -221,23 +233,23 @@ export default function Footer() {
               <div className="space-y-6">
                 <div>
                   <div className="text-white/80 text-sm mb-1">Email</div>
-                  <a href="mailto:hello@novorix.com" className="text-white/60 hover:text-white transition-colors duration-300 text-sm">
-                    hello@novorix.com
+                  <a href="mailto:contact@novorixsol.com" className="text-white/60 hover:text-white transition-colors duration-300 text-sm">
+                    contact@novorixsol.com
                   </a>
                 </div>
                 
                 <div>
                   <div className="text-white/80 text-sm mb-1">Phone</div>
-                  <a href="tel:+15551234567" className="text-white/60 hover:text-white transition-colors duration-300 text-sm">
-                    +1 (555) 123-4567
+                  <a href="tel:+923187115752" className="text-white/60 hover:text-white transition-colors duration-300 text-sm">
+                    +923187115752
                   </a>
                 </div>
                 
                 <div>
                   <div className="text-white/80 text-sm mb-1">Location</div>
                   <div className="text-white/60 text-sm">
-                    Innovation Street 123<br />
-                    Tech District
+                    Ar Rabwah <br />
+                    Jeddah
                   </div>
                 </div>
               </div>

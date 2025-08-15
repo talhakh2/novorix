@@ -31,20 +31,20 @@ export default function ContactSection() {
     {
       icon: <Mail size={20} />,
       title: "Email Us",
-      details: "hello@novorixsolutions.com",
-      subtitle: "We'll respond within 24 hours"
+      details: "contact@novorixsol.com",
+      subtitle: "We'll respond within 3 hours"
     },
     {
       icon: <Phone size={20} />,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
-      subtitle: "Mon-Fri 9AM-6PM EST"
+      details: "+923187115752",
+      subtitle: "Mon-Sat 9AM-6PM PST"
     },
     {
       icon: <MapPin size={20} />,
       title: "Visit Us",
-      details: "123 Innovation Street",
-      subtitle: "Tech District, City 12345"
+      details: "Ar Rabwah Jeddah",
+      subtitle: "Jeddah"
     }
   ];
 

@@ -1,5 +1,12 @@
 [
   {
+    "title": "EGOAPP",
+    "description": "Boost your Google reviews or increase your social media followers!",
+    "image": "/ego.jpg?width=600&height=400&fit=crop",
+    "category": "Web Development",
+    "link": "https://egoapp.fr/"
+  },
+  {
     "title": "VIBEAT",
     "description": "A sleek responsive event booking website.",
     "image": "/event.png?width=600&height=400&fit=crop",
@@ -56,32 +63,60 @@
     "link": "https://motride.com/"
   },
   {
-    "title": "AI SaaS Dashboard",
-    "description": "A powerful analytics dashboard for a SaaS AI startup.",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    "title": "SEO Content and Image Automation",
+    "description": "Automate SEO-optimized content creation and image generation to boost rankings effortlessly.",
+    "image": "/ai1.jpg?w=600&h=400&fit=crop",
     "category": "AI Automation",
-    "link": "https://ai-dashboard-demo.netlify.app"
+    "link": "#"
   },
   {
-    "title": "AI Document Extractor",
-    "description": "Automated system for parsing scanned PDFs with AI.",
-    "image": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop",
+    "title": "Bland AI Agent",
+    "description": "AI receptionist for handling inbound calls and auto booking appointment.",
+    "image": "/ai2.jpg?w=600&h=400&fit=crop",
     "category": "AI Automation",
-    "link": "https://doc-ai-extractor-demo.vercel.app"
+    "link": "#"
+  },
+   {
+    "title": "Commission dashboard",
+    "description": "Commission dashboard  to track commission for sales representatives each month automatically.",
+    "image": "/ai4.jpg?w=600&h=400&fit=crop",
+    "category": "AI Automation",
+    "link": "#"
+  },
+   {
+    "title": "Linkedin Automation",
+    "description": "Developed a MERN web app that automates LinkedIn tasks like sending connection requests, messages, and post comments using a third-party integration.",
+    "image": "/ai3.jpg?w=600&h=400&fit=crop",
+    "category": "AI Automation",
+    "link": "#"
   },
   {
-    "title": "Marketing Landing Page",
-    "description": "Optimized landing page for high conversion.",
-    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    "title": "EduAI Web Design",
+    "description": "AI-powered tool that effortlessly transforms your video content into valuable text-based resources.",
+    "image": "/ui1.png?w=600&h=400&fit=crop",
     "category": "UI/UX Design",
-    "link": "https://marketing-landing-demo.netlify.app"
+    "link": "https://www.figma.com/design/RFuOw43M7JWNNXSvR3zJOs/Transcription-Tool--Copy-?t=dIGxrKWxzaceTylU-0"
   },
   {
-    "title": "UX Redesign Case Study",
-    "description": "Complete redesign of an outdated web interface.",
-    "image": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop",
+    "title": "Web Design Managment System",
+    "description": "Figma design prototype for an intuitive and engaging Learning Management System.",
+    "image": "/ui2.png?w=600&h=400&fit=crop",
     "category": "UI/UX Design",
-    "link": "https://ux-redesign-case-study.vercel.app"
+    "link": "https://www.figma.com/design/qsVfnbreqejkuWDinzgOdZ/Learning-Management-System?m=auto&t=0whd92qmgDwnR6Et-6"
+  },
+  {
+    "title": "EgoApp Figma Design",
+    "description": "Figma design prototype for an egoapp.",
+    "image": "/ui3.png?w=600&h=400&fit=crop",
+    "category": "UI/UX Design",
+    "link": "https://www.figma.com/design/3UqofVFDemiDR4qS2GVYpL/EGO?m=auto&t=0whd92qmgDwnR6Et-6"
+  },
+    {
+    "title": "Eagles FC Web Design",
+    "description": "Figma design prototype for an Eagles Fc Website.",
+    "image": "/ui4.png?w=600&h=400&fit=crop",
+    "category": "UI/UX Design",
+    "link": "https://www.figma.com/design/cUB9Ag535FwkF6Rgx5iNLG/EAGLES-FC-WEBSITE--Copy-?m=auto&t=0whd92qmgDwnR6Et-6"
   },
   {
     "title": "Ride Booking App",
