@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, Shield, Mail, Phone, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "../../components/ui/button";
+import { Badge } from "../../components/ui/badge";
+import { useEffect } from "react";
 
 export default function PrivacyPolicy() {
+
+  // ← Added this entire useEffect block
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -36,7 +43,7 @@ export default function PrivacyPolicy() {
       </div>
 
       {/* Header */}
-      <motion.header 
+      <motion.header
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -73,14 +80,14 @@ export default function PrivacyPolicy() {
                 Privacy Policy
               </Badge>
             </div>
-            
+
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 sm:mb-6 px-2">
               Privacy{" "}
               <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
                 Policy
               </span>
             </h1>
-            
+
             <p className="text-base sm:text-lg text-white/60 mb-3 sm:mb-4">
               for Novorix Solutions
             </p>
@@ -100,7 +107,7 @@ export default function PrivacyPolicy() {
 
           {/* Privacy Sections */}
           <motion.div variants={stagger} className="space-y-8 sm:space-y-10 lg:space-y-12">
-            
+
             {/* Information We Collect */}
             <motion.section variants={fadeInUp}>
               <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
@@ -293,7 +300,7 @@ export default function PrivacyPolicy() {
               <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-white/70 leading-relaxed mb-4 sm:mb-6">
                 <p>If you have any questions or wish to exercise your rights regarding your personal data, please contact us:</p>
               </div>
-              
+
               <div className="p-4 sm:p-6 rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm">
                 <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Novorix Solutions</h3>
                 <div className="space-y-2 sm:space-y-3">

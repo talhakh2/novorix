@@ -18,7 +18,7 @@ export default function Footer() {
 
   const services = [
     { name: "Brand Strategy", href: "#services" },
-    { name: "Web Development", href: "#services" }, 
+    { name: "Web Development", href: "#services" },
     { name: "Mobile Applications", href: "#services" },
     { name: "Digital Marketing", href: "#services" },
     { name: "User Experience", href: "#services" }
@@ -26,7 +26,7 @@ export default function Footer() {
 
   const company = [
     { name: "About", href: "#about" },
-    { name: "Services", href: "#services" }, 
+    { name: "Services", href: "#services" },
     { name: "Team", href: "#team" },
     { name: "Contact", href: "#contact" },
     { name: "Projects", href: "#projects" }
@@ -49,7 +49,7 @@ export default function Footer() {
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
       if (element) {
-        element.scrollIntoView({ 
+        element.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         });
@@ -71,12 +71,12 @@ export default function Footer() {
       <div className="relative">
         {/* Top accent line */}
         <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        
+
         <div className="container mx-auto px-6 py-20">
           {/* Main grid */}
           <div className="grid lg:grid-cols-12 gap-16 mb-20">
             {/* Brand section */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -84,15 +84,15 @@ export default function Footer() {
               className="lg:col-span-5"
             >
               <div className="mb-8">
-                <img 
-                  src="/logo1.png" 
-                  alt="Novorix" 
-                  width={180} 
+                <img
+                  src="/logo1.png"
+                  alt="Novorix"
+                  width={180}
                   height={18}
                   className="opacity-90"
                 />
               </div>
-              
+
               <p className="text-white/60 text-lg leading-relaxed mb-12 max-w-md">
                 We craft digital experiences that matter. Transforming ambitious ideas into reality through thoughtful design and innovative technology.
               </p>
@@ -102,7 +102,7 @@ export default function Footer() {
                 <h4 className="text-white/90 font-medium mb-6 tracking-wide">
                   STAY CONNECTED
                 </h4>
-                
+
                 <form onSubmit={handleNewsletterSubmit} className="group">
                   <div className="relative">
                     <input
@@ -122,7 +122,7 @@ export default function Footer() {
                       <Send className="w-4 h-4 text-white/60 hover:text-white transition-colors duration-300" />
                     </motion.button>
                   </div>
-                  
+
                   <AnimatePresence>
                     {isSubscribed && (
                       <motion.div
@@ -156,7 +156,7 @@ export default function Footer() {
             </motion.div>
 
             {/* Services */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -178,9 +178,8 @@ export default function Footer() {
                   >
                     <div className="flex items-center">
                       <span className="text-sm">{service.name}</span>
-                      <ArrowRight className={`w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ${
-                        hoveredIndex === `service-${i}` ? 'translate-x-1' : ''
-                      }`} />
+                      <ArrowRight className={`w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ${hoveredIndex === `service-${i}` ? 'translate-x-1' : ''
+                        }`} />
                     </div>
                   </motion.button>
                 ))}
@@ -188,7 +187,7 @@ export default function Footer() {
             </motion.div>
 
             {/* Company */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -210,9 +209,8 @@ export default function Footer() {
                   >
                     <div className="flex items-center">
                       <span className="text-sm">{item.name}</span>
-                      <ArrowRight className={`w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ${
-                        hoveredIndex === `company-${i}` ? 'translate-x-1' : ''
-                      }`} />
+                      <ArrowRight className={`w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ${hoveredIndex === `company-${i}` ? 'translate-x-1' : ''
+                        }`} />
                     </div>
                   </motion.button>
                 ))}
@@ -220,7 +218,7 @@ export default function Footer() {
             </motion.div>
 
             {/* Contact */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -237,14 +235,14 @@ export default function Footer() {
                     contact@novorixsol.com
                   </a>
                 </div>
-                
+
                 <div>
                   <div className="text-white/80 text-sm mb-1">Phone</div>
                   <a href="tel:+923187115752" className="text-white/60 hover:text-white transition-colors duration-300 text-sm">
                     +923187115752
                   </a>
                 </div>
-                
+
                 <div>
                   <div className="text-white/80 text-sm mb-1">Location</div>
                   <div className="text-white/60 text-sm">
@@ -262,20 +260,30 @@ export default function Footer() {
               <div className="text-white/40 text-sm">
                 © {new Date().getFullYear()} Novorix Solutions. All rights reserved.
               </div>
-              
+
               <div className="flex items-center space-x-8">
                 <div className="flex space-x-6">
-                  {["Privacy", "Terms", "Cookies"].map((item, i) => (
-                    <a
-                      key={i}
-                      href="#"
-                      className="text-white/40 hover:text-white/80 text-sm transition-colors duration-300"
-                    >
-                      {item}
-                    </a>
-                  ))}
+                  <Link
+                    to="/privacy"
+                    className="text-white/40 hover:text-white/80 text-sm transition-colors duration-300"
+                  >
+                    Privacy
+                  </Link>
+                  <Link
+                    to="/terms"
+                    className="text-white/40 hover:text-white/80 text-sm transition-colors duration-300"
+                  >
+                    Terms
+                  </Link>
+                  <Link
+                    to="/cookies"
+                    className="text-white/40 hover:text-white/80 text-sm transition-colors duration-300"
+                  >
+                    Cookies
+                  </Link>
                 </div>
-                
+
+
                 <motion.button
                   onClick={scrollToTop}
                   whileHover={{ y: -2 }}
