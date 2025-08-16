@@ -44,7 +44,7 @@ export default function ContactSection() {
       icon: <MapPin size={20} />,
       title: "Visit Us",
       details: "Ar Rabwah Jeddah",
-      subtitle: "Jeddah"
+      subtitle: "Saudi Arabia"
     }
   ];
 
