@@ -239,15 +239,15 @@ export default function Footer() {
                 <div>
                   <div className="text-white/80 text-sm mb-1">Phone</div>
                   <a href="tel:+923187115752" className="text-white/60 hover:text-white transition-colors duration-300 text-sm">
-                    +923187115752
+                    +92 3187115752
                   </a>
                 </div>
 
                 <div>
                   <div className="text-white/80 text-sm mb-1">Location</div>
                   <div className="text-white/60 text-sm">
-                    Ar Rabwah <br />
-                    Jeddah
+                    Pakistan Town, Islamabad
+                    
                   </div>
                 </div>
               </div>

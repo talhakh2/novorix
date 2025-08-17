@@ -43,8 +43,8 @@ export default function ContactSection() {
     {
       icon: <MapPin size={20} />,
       title: "Visit Us",
-      details: "Ar Rabwah Jeddah",
-      subtitle: "Saudi Arabia"
+      details: "Islamabad",
+      subtitle: "Pakistan"
     }
   ];
 
@@ -77,6 +77,24 @@ export default function ContactSection() {
         setSubmitStatus(null);
       }, 5000);
     }, 2000);
+
+    try {
+      const response = await fetch("http://localhost:5001/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      console.log(response);
+      
+
+      const data = await response.json();
+      console.log("mail sent");
+      
+    } catch (error) {
+      console.error("Error:", error);
+    }
+
   };
 
   // Container animation variants
