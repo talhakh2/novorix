@@ -5,8 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
+import base_url  from "../../constants";
 
 export default function ContactSection() {
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -79,7 +81,7 @@ export default function ContactSection() {
     }, 2000);
 
     try {
-      const response = await fetch("http://localhost:5001/contact", {
+      const response = await fetch(`${base_url}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
