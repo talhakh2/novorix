@@ -17,10 +17,10 @@ export default function TeamSection() {
   const [dragStart, setDragStart] = useState(0);
   const [dragEnd, setDragEnd] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  
+
   const topMembers = teamData.slice(0, 2); // First 2 members
   const otherMembers = teamData.slice(2); // Remaining members
-  
+
   // Responsive visible count
   const getVisibleCount = () => {
     if (typeof window !== 'undefined') {
@@ -55,7 +55,7 @@ export default function TeamSection() {
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -65,7 +65,7 @@ export default function TeamSection() {
     } else if (isRightSwipe) {
       prevSlide();
     }
-    
+
     setTouchStart(0);
     setTouchEnd(0);
   };
@@ -84,7 +84,7 @@ export default function TeamSection() {
 
   const handleMouseUp = () => {
     if (!isDragging || !dragStart) return;
-    
+
     const distance = dragStart - dragEnd;
     const isLeftDrag = distance > 50;
     const isRightDrag = distance < -50;
@@ -94,7 +94,7 @@ export default function TeamSection() {
     } else if (isRightDrag) {
       prevSlide();
     }
-    
+
     setIsDragging(false);
     setDragStart(0);
     setDragEnd(0);
@@ -150,8 +150,8 @@ export default function TeamSection() {
   };
 
   const cardVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 50,
       scale: 0.9,
       rotateX: -15
@@ -168,8 +168,8 @@ export default function TeamSection() {
         duration: 0.6
       }
     },
-    exit: { 
-      opacity: 0, 
+    exit: {
+      opacity: 0,
       y: -50,
       scale: 0.9,
       rotateX: 15,
@@ -227,11 +227,11 @@ export default function TeamSection() {
       <Card className={`h-full border border-white/10 hover:border-white/30 shadow-xl hover:shadow-white/10 transition-all duration-300 backdrop-blur bg-white/5 ${isTop ? 'cursor-pointer' : ''}`}>
         <CardContent className={`${isTop ? 'p-6 sm:p-4 lg:p-6 px-6 sm:px-4 lg:px-8' : 'p-6'} text-center`}>
           {/* Avatar placeholder - with entrance animation */}
-          <motion.div 
+          <motion.div
             className={`${isTop ? 'w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-base sm:text-sm lg:text-base' : 'w-8 h-8 text-sm'} mb-3 sm:mb-2 lg:mb-3 mx-auto rounded-full border-2 border-white/30 flex items-center justify-center text-white font-bold`}
             initial={{ scale: 0, rotate: -90 }}
             animate={{ scale: 1, rotate: 0 }}
-            transition={{ 
+            transition={{
               delay: 0.3,
               type: "spring",
               damping: 12,
@@ -240,14 +240,14 @@ export default function TeamSection() {
           >
             {member.name.split(' ').map(n => n[0]).join('')}
           </motion.div>
-          
-          <motion.h3 
+
+          <motion.h3
             variants={textVariants}
             className={`${isTop ? 'text-base sm:text-base lg:text-lg' : 'text-base'} font-semibold text-white mb-3 sm:mb-2 lg:mb-3`}
           >
             {member.name}
           </motion.h3>
-          
+
           <motion.div
             variants={textVariants}
             className="mb-3"
@@ -256,9 +256,9 @@ export default function TeamSection() {
               CO-FOUNDER
             </Badge>
           </motion.div>
-          
+
           {isTop && (
-            <motion.p 
+            <motion.p
               variants={textVariants}
               className="text-sm sm:text-xs lg:text-sm text-gray-400 mt-2 sm:mt-1 lg:mt-2"
             >
@@ -292,7 +292,7 @@ export default function TeamSection() {
         >
           <X size={20} />
         </button>
-        
+
         <div className="text-center mb-4">
           <div className="w-16 h-16 mx-auto rounded-full border-2 border-white/30 flex items-center justify-center text-white font-bold text-lg mb-3">
             {member.name.split(' ').map(n => n[0]).join('')}
@@ -302,26 +302,45 @@ export default function TeamSection() {
             CO-FOUNDER
           </Badge>
         </div>
-        
+
         <p className="text-gray-300 leading-relaxed mb-6">
           {member.fullMessage}
         </p>
-        
+
         <div className="flex justify-center gap-2">
-          {Object.entries(member.social).map(([platform, url]) => (
-            <motion.a
-              key={platform}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full bg-gray-800 hover:bg-white text-gray-400 hover:text-black transition-all duration-200"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              {getSocialIcon(platform)}
-            </motion.a>
-          ))}
+          {Object.entries(member.social).map(([platform, url]) => {
+            if (platform === "email") {
+              return (
+                <motion.a
+                  key={platform}
+                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${url}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-full bg-gray-800 hover:bg-white text-gray-400 hover:text-black transition-all duration-200"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  {getSocialIcon(platform)}
+                </motion.a>
+              );
+            }
+
+            return (
+              <motion.a
+                key={platform}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-gray-800 hover:bg-white text-gray-400 hover:text-black transition-all duration-200"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {getSocialIcon(platform)}
+              </motion.a>
+            );
+          })}
         </div>
+
       </motion.div>
     </motion.div>
   );
@@ -370,9 +389,9 @@ export default function TeamSection() {
 
         {/* Other Team Members - With Testimonials Style Navigation */}
         <div className="relative px-2 sm:px-4 py-4 sm:py-6 lg:py-8">
-          <motion.div 
+          <motion.div
             className="flex items-start justify-center gap-6 select-none"
-            style={{ 
+            style={{
               perspective: "1000px",
               cursor: isDragging ? "grabbing" : "grab"
             }}
@@ -403,11 +422,11 @@ export default function TeamSection() {
                   >
                     <Card className="h-full border border-white/10 hover:border-white/30 shadow-xl hover:shadow-white/10 transition-all duration-300 backdrop-blur bg-white/5">
                       <CardContent className="p-6 text-center">
-                        <motion.div 
+                        <motion.div
                           className="w-8 h-8 mb-3 mx-auto rounded-full border-2 border-white/30 flex items-center justify-center text-white font-bold text-sm"
                           initial={{ scale: 0, rotate: -90 }}
                           animate={{ scale: 1, rotate: 0 }}
-                          transition={{ 
+                          transition={{
                             delay: 0.3,
                             type: "spring",
                             damping: 12,
@@ -416,14 +435,14 @@ export default function TeamSection() {
                         >
                           {member.name.split(' ').map(n => n[0]).join('')}
                         </motion.div>
-                        
-                        <motion.h3 
+
+                        <motion.h3
                           variants={textVariants}
                           className="text-base font-semibold text-white mb-3"
                         >
                           {member.name}
                         </motion.h3>
-                        
+
                         <motion.div
                           variants={textVariants}
                           className="mb-3"
@@ -448,11 +467,10 @@ export default function TeamSection() {
                 <motion.button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    Math.floor(currentIndex / visibleCount) === index
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${Math.floor(currentIndex / visibleCount) === index
                       ? "bg-white"
                       : "bg-gray-600"
-                  }`}
+                    }`}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.8 }}
                 />
@@ -464,9 +482,9 @@ export default function TeamSection() {
       {/* Popup Modal */}
       <AnimatePresence>
         {selectedMember && (
-          <PopupModal 
-            member={selectedMember} 
-            onClose={() => setSelectedMember(null)} 
+          <PopupModal
+            member={selectedMember}
+            onClose={() => setSelectedMember(null)}
           />
         )}
       </AnimatePresence>
