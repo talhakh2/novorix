@@ -9,8 +9,8 @@
     "skills": ["Strategic Planning", "Business Development", "AI Strategy"],
     "social": {
       "linkedin": "https://www.linkedin.com/in/talha-farooq-developer/",
-      "twitter": "",
-      "email": "talha.kh58@gmail.com"
+      "github": "https://github.com/talhakh2",
+      "email": "mailto:talha.kh58@gmail.com"
     }
   },
   {
@@ -23,8 +23,8 @@
     "skills": ["Operations Management", "Team Leadership", "Process Optimization"],
     "social": {
       "linkedin": "https://www.linkedin.com/in/abubakeranwar/",
-      "github": "",
-      "email": ""
+      "github": "https://github.com/Abubaker445",
+      "email": "mailto:abubakeranwar859@gmail.com"
     }
   },
   {
@@ -55,7 +55,7 @@
   },
   {
     "name": "Syed Wisal Shah",
-    "role": "Partner & UI/UX Designer",
+    "role": "UI/UX Designer",
     "position": "team",
     "department": "Design",
     "bio": "Creative designer with expertise in user-centered design and brand development.",

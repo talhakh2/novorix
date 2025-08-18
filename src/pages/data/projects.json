@@ -76,14 +76,14 @@
     "category": "AI Automation",
     "link": "#"
   },
-   {
+  {
     "title": "Commission dashboard",
     "description": "Commission dashboard  to track commission for sales representatives each month automatically.",
     "image": "/ai4.jpg?w=600&h=400&fit=crop",
     "category": "AI Automation",
     "link": "#"
   },
-   {
+  {
     "title": "Linkedin Automation",
     "description": "Developed a MERN web app that automates LinkedIn tasks like sending connection requests, messages, and post comments using a third-party integration.",
     "image": "/ai3.jpg?w=600&h=400&fit=crop",
@@ -111,7 +111,7 @@
     "category": "UI/UX Design",
     "link": "https://www.figma.com/design/3UqofVFDemiDR4qS2GVYpL/EGO?m=auto&t=0whd92qmgDwnR6Et-6"
   },
-    {
+  {
     "title": "Eagles FC Web Design",
     "description": "Figma design prototype for an Eagles Fc Website.",
     "image": "/ui4.png?w=600&h=400&fit=crop",
@@ -147,24 +147,10 @@
     "link": "https://play.google.com/store/apps/details?id=com.ordable.petstore&hl=en"
   },
   {
-    "title": "SEO Analytics Tool",
-    "description": "Dashboard for real-time SEO performance tracking.",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    "category": "Digital Marketing",
-    "link": "https://seo-analytics-dashboard.netlify.app"
-  },
-  {
-    "title": "Lead Gen System",
-    "description": "Landing pages and funnel setup for B2B sales.",
-    "image": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600&h=400&fit=crop",
-    "category": "Digital Marketing",
-    "link": "https://leadgen-funnel-demo.vercel.app"
-  },
-  {
-    "title": "YouTube Growth Funnel",
-    "description": "Lead magnet, email drip, and retargeting ads.",
-    "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
-    "category": "Digital Marketing",
-    "link": "https://youtube-growth-demo.netlify.app"
+    "title": "Meta and Google Campaigns",
+"description": "Boost TFA’s online visibility with targeted Meta and Google campaigns, supported by powerful SEO for maximum reach and lead generation.",
+"image": "/d1.png?w=600&h=400&fit=crop",
+"category": "Digital Marketing",
+"link": "https://tfauae.com"
   }
 ]

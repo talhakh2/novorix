@@ -11,17 +11,17 @@ export default function Footer() {
 
   const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/company/novorix/about/?viewAsMember=true", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    // { icon: Twitter, href: "#", label: "Twitter" },
+    // { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Github, href: "https://github.com/talhakh2", label: "GitHub" }
   ];
 
   const services = [
-    { name: "Brand Strategy", href: "#services" },
+    { name: "AI Automation", href: "#services" },
     { name: "Web Development", href: "#services" },
     { name: "Mobile Applications", href: "#services" },
     { name: "Digital Marketing", href: "#services" },
-    { name: "User Experience", href: "#services" }
+    { name: "UI/UX Design", href: "#services" }
   ];
 
   const company = [
