@@ -325,8 +325,8 @@ export default function TermsOfService() {
                                     </div>
                                     <div className="flex items-start sm:items-center text-sm sm:text-base text-white/70">
                                         <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-purple-400 mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-0" />
-                                        <a href="mailto:info@novorix.com" className="text-purple-400 hover:text-purple-300 transition-colors break-all">
-                                            info@novorix.com
+                                        <a href="mailto:contact@novorixsol.com" className="text-purple-400 hover:text-purple-300 transition-colors break-all">
+                                            contact@novorixsol.com
                                         </a>
                                     </div>
                                     <div className="flex items-start sm:items-center text-sm sm:text-base text-white/70">

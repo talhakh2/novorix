@@ -266,17 +266,16 @@ export default function TestimonialsSection() {
                           >
                             "{review.text}"
                           </motion.p>
-                          {review.text.split(" ").length > 25 && (
-                            <motion.button
-                              variants={textVariants}
-                              onClick={() => toggleExpand(index)}
-                              className="text-sm text-purple-500 hover:underline mb-3 transition-colors duration-200"
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                            >
-                              {expanded[index] ? "Show Less" : "Read More"}
-                            </motion.button>
-                          )}
+                          {/* Read More button now appears for all reviews */}
+                          <motion.button
+                            variants={textVariants}
+                            onClick={() => toggleExpand(index)}
+                            className="text-sm text-purple-500 hover:underline mb-3 transition-colors duration-200"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            {expanded[index] ? "Show Less" : "Read More"}
+                          </motion.button>
                           <motion.div 
                             variants={textVariants}
                             className="flex justify-center gap-1 text-yellow-400 mb-3"
