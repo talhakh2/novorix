@@ -9,7 +9,16 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-    optimizeDeps: {
-    exclude: ['react-intersection-observer']
+  optimizeDeps: {
+    exclude: ['react-intersection-observer'],
+  },
+  server: {
+    host: true, 
+    port: 5173,
+    allowedHosts: [
+      '.ngrok-free.app',   // ✅ allow any ngrok free domain
+      'localhost',         // local
+      '127.0.0.1'          // loopback
+    ],
   },
 })
