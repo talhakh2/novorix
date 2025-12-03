@@ -34,7 +34,7 @@ export default function AboutSection() {
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check if mobile
+  // Check if mobilee
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
