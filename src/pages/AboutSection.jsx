@@ -34,7 +34,7 @@ export default function AboutSection() {
   const [isDragging, setIsDragging] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check if mobile
+  // Check if mobilee
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -164,7 +164,7 @@ export default function AboutSection() {
           )}
 
           {/* Cards Container with 3D Perspective */}
-          <div className="relative h-[500px] md:h-[600px] mx-auto max-w-4xl">
+          <div className="relative h-[420px] md:h-[480px] mx-auto max-w-4xl">
             {sections.map((section, index) => {
               const transform = getCardTransform(index);
               const isCenter = index === currentIndex;
@@ -192,7 +192,7 @@ export default function AboutSection() {
                   onClick={() => !isCenter && goToCard(index)}
                   whileHover={!isMobile && !isCenter ? { scale: transform.scale * 1.05 } : {}}
                 >
-                  <div className={`h-full w-full mx-auto max-w-sm md:max-w-md bg-gradient-to-br ${section.gradient} rounded-2xl p-6 md:p-8 flex flex-col justify-center items-center text-white relative overflow-hidden shadow-2xl border border-white/10`}>
+                  <div className={`h-full w-full mx-auto max-w-[280px] md:max-w-[400px] bg-gradient-to-br ${section.gradient} rounded-2xl p-5 md:p-7 flex flex-col justify-center items-center text-white relative overflow-hidden shadow-2xl border border-white/10`}>
                     {/* 3D Card Frame Effect */}
                     <div className="absolute inset-0 rounded-2xl border-2 border-white/20" />
                     <div className="absolute inset-1 rounded-xl border border-white/10" />
@@ -214,7 +214,7 @@ export default function AboutSection() {
                         initial={{ scale: 0 }}
                         whileInView={{ scale: 1 }}
                         transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                        className={`${isCenter ? 'text-6xl md:text-8xl' : 'text-4xl md:text-6xl'} mb-4 md:mb-6 transition-all duration-500`}
+                        className={`${isCenter ? 'text-5xl md:text-6xl' : 'text-3xl md:text-4xl'} mb-3 md:mb-4 transition-all duration-500`}
                       >
                         {section.icon}
                       </motion.div>
@@ -224,7 +224,7 @@ export default function AboutSection() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.6 }}
-                        className={`${isCenter ? 'text-2xl md:text-4xl' : 'text-xl md:text-3xl'} font-bold mb-4 md:mb-6 transition-all duration-500`}
+                        className={`${isCenter ? 'text-xl md:text-3xl' : 'text-lg md:text-2xl'} font-bold mb-3 md:mb-4 transition-all duration-500`}
                       >
                         {section.title}
                       </motion.h3>
@@ -236,7 +236,7 @@ export default function AboutSection() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -20 }}
                           transition={{ delay: 0.4, duration: 0.6 }}
-                          className="text-sm md:text-base leading-relaxed max-w-xs md:max-w-sm mx-auto text-white/90"
+                          className="text-sm md:text-base leading-relaxed max-w-[240px] md:max-w-[340px] mx-auto text-white/90"
                         >
                           {section.description}
                         </motion.p>
