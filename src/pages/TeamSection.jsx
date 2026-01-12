@@ -226,7 +226,7 @@ export default function TeamSection() {
     >
       <Card className={`h-full border border-white/10 hover:border-white/30 shadow-xl hover:shadow-white/10 transition-all duration-300 backdrop-blur bg-white/5 ${isTop ? 'cursor-pointer' : ''}`}>
         <CardContent className={`${isTop ? 'p-6 sm:p-4 lg:p-6 px-6 sm:px-4 lg:px-8' : 'p-6'} text-center`}>
-          {/* Avatar placeholder - with entrance animation */}
+          {/* Avatar placeholder---- - with entrance animation */}
           <motion.div
             className={`${isTop ? 'w-12 h-12 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-base sm:text-sm lg:text-base' : 'w-8 h-8 text-sm'} mb-3 sm:mb-2 lg:mb-3 mx-auto rounded-full border-2 border-white/30 flex items-center justify-center text-white font-bold`}
             initial={{ scale: 0, rotate: -90 }}
