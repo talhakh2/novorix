@@ -253,7 +253,7 @@ export default function TeamSection() {
             className="mb-3"
           >
             <Badge variant="secondary" className="text-xs sm:text-xs tracking-wide px-3 sm:px-3 py-1 border border-white/10 bg-white/5 text-white rounded-full backdrop-blur-sm whitespace-nowrap">
-              CO-FOUNDER
+              FOUNDER
             </Badge>
           </motion.div>
 
@@ -299,7 +299,7 @@ export default function TeamSection() {
           </div>
           <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
           <Badge variant="secondary" className="text-xs tracking-wide px-3 py-1 border border-white/10 bg-white/5 text-white rounded-full backdrop-blur-sm whitespace-nowrap">
-            CO-FOUNDER
+            FOUNDER
           </Badge>
         </div>
 
